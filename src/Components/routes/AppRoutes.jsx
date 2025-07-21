@@ -10,11 +10,13 @@ import Booking from '../pages/Booking';
 import UserDashboard from '../pages/UserDashboard';
 import ProviderDashboard from '../pages/ProviderDashboard';
 import History from '../pages/History';
+import ErrorPage from '../pages/ErrorPage';
 
 const AppRoutes = () => {
     return (
         <div>
             <Routes>
+                <Route path="*" element={<ErrorPage />} />
                 <Route path="/" element={<Homepage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/providers" element={<Providers />} />
