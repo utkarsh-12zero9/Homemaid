@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useContext, useEffect } from 'react';
 import { LoginContext } from '../../App';
 import logo from '../../assets/icons/Logo_homemaid.png';
@@ -26,9 +26,14 @@ function Navbar() {
   return (
     <nav className="bg-[#00246B] text-white h-20 px-4 shadow-md">
       <div className="max-w-7xl mx-auto h-full flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold font-poppins leading-none">
+        <NavLink style={({isActive}) => {
+          return {
+            color : isActive ? "#10B981" : undefined,
+            fontWeight: isActive ? "bold" : undefined            
+          }
+        } } to="/" className="text-2xl font-bold font-poppins leading-none">
           <img src={logo} alt="HomeMaid Logo" className="h-14 w-auto rounded-lg" />
-        </Link>
+        </NavLink>
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -40,10 +45,30 @@ function Navbar() {
           </button>
         </div>
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Home</Link>
-          <Link to="/about" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">About</Link>
-          <Link to="/services" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Services</Link>
-          <Link to="/providers" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Providers</Link>
+          <NavLink style={({isActive}) => {
+            return {
+              color : isActive ? "#10B981" : undefined,
+              fontWeight: isActive ? "bold" : undefined,
+            }
+          } } to="/" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Home</NavLink>
+          <NavLink style={({isActive}) => {
+            return {
+              color : isActive ? "#10B981" : undefined,
+              fontWeight: isActive ? "bold" : undefined,
+            }
+          } } to="/about" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">About</NavLink>
+          <NavLink style={({isActive}) => {
+            return {
+              color : isActive ? "#10B981" : undefined,
+              fontWeight: isActive ? "bold" : undefined,
+            }
+          } } to="/services" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Services</NavLink>
+          <NavLink style={({isActive}) => {
+            return {
+              color : isActive ? "#10B981" : undefined,
+              fontWeight: isActive ? "bold" : undefined,
+            }
+          } } to="/providers" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors">Providers</NavLink>
           {isLoggedIn ? (
             <button
               onClick={goToProfile}
@@ -53,22 +78,46 @@ function Navbar() {
             </button>
           ) : (
             <>
-              <Link to="/login" className="font-poppins text-white bg-[#10B981] px-4 py-2 rounded-md text-base leading-none hover:bg-green-500 hover:text-white transition-all shadow-md hover:shadow-lg">
+              <NavLink to = "/login" className="font-poppins text-white bg-[#10B981] px-4 py-2 rounded-md text-base leading-none hover:bg-green-500 hover:text-white transition-all shadow-md hover:shadow-lg">
                 Login
-              </Link>
-              <Link to="/signup" className="font-poppins text-white bg-[#10B981] px-4 py-2 rounded-md text-base leading-none hover:bg-green-500 hover:text-white transition-all shadow-md hover:shadow-lg">
+              </NavLink>
+              <NavLink to="/signup" className="font-poppins text-white bg-[#10B981] px-4 py-2 rounded-md text-base leading-none hover:bg-green-500 hover:text-white transition-all shadow-md hover:shadow-lg">
                 Sign Up
-              </Link>
+              </NavLink>
             </>
           )}
         </div>
         {isOpen && (
           <div className="md:hidden absolute top-20 left-0 w-full bg-[#00246B] shadow-md z-10">
             <div className="flex flex-col space-y-4 p-4">
-              <Link to="/" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
-              <Link to="/about" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
-              <Link to="/services" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
-              <Link to="/providers" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Providers</Link>
+              <NavLink style={({isActive}) => {
+                return {
+                  color : isActive ? "#10B981" : undefined,
+                  fontWeight: isActive ? "bold" : undefined,
+  
+                }
+              } } to="/" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Home</NavLink>
+              <NavLink style={({isActive}) => {
+                return {
+                  color : isActive ? "#10B981" : undefined,
+                  fontWeight: isActive ? "bold" : undefined,
+  
+                }
+              } } to="/about" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>About</NavLink>
+              <NavLink style={({isActive}) => {
+                return {
+                  color : isActive ? "#10B981" : undefined,
+                  fontWeight: isActive ? "bold" : undefined,
+  
+                }
+              } } to="/services" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Services</NavLink>
+              <NavLink style={({isActive}) => {
+                return {
+                  color : isActive ? "#10B981" : undefined,
+                  fontWeight: isActive ? "bold" : undefined,
+  
+                }
+              } } to="/providers" className="font-poppins text-base leading-none hover:text-[#10B981] transition-colors" onClick={() => setIsOpen(false)}>Providers</NavLink>
               {isLoggedIn ? (
                 <button
                   onClick={goToProfile}
@@ -78,8 +127,14 @@ function Navbar() {
                 </button>
               ) : (
                 <div className='grid grid-cols-2 gap-2'>
-                  <Link to="/login" className="font-poppins  font-bold text-white bg-[#10B981] px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base hover:bg-teal-700 hover:text-white transition-all text-center" onClick={() => setIsOpen(false)}>Login</Link>
-                  <Link to="/signup" className="font-poppins font-bold  text-white bg-[#10B981] px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base hover:bg-teal-700 hover:text-white transition-all text-center" onClick={() => setIsOpen(false)}>Sign Up</Link>
+                  <NavLink style={({isActive}) => {
+                    return {
+                      color : isActive ? "#10B981" : undefined,
+                      fontWeight: isActive ? "bold" : undefined,
+      
+                    }
+                  } } to="/login" className="font-poppins  font-bold text-white bg-[#10B981] px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base hover:bg-teal-700 hover:text-white transition-all text-center" onClick={() => setIsOpen(false)}>Login</NavLink>
+                  <NavLink to="/signup" className="font-poppins font-bold  text-white bg-[#10B981] px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base hover:bg-teal-700 hover:text-white transition-all text-center" onClick={() => setIsOpen(false)}>Sign Up</NavLink>
                 </div>
               )}
             </div>
