@@ -48,7 +48,7 @@ function SignUp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 to-blue-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl max-w-md w-full p-6 sm:p-8 transition-all duration-300 transform hover:-translate-y-3 border border-teal-100">
+      <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl max-w-md w-full p-6 sm:p-8 transition-all duration-300 transform border border-teal-100">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-teal-800 font-poppins text-center tracking-tight">
           Sign Up
         </h2>
