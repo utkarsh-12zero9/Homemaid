@@ -127,5 +127,6 @@ This project is licensed under the MIT License. Feel free to use, modify, and di
 For questions or support, reach out to:
 
 `Email: utkarshkumarsingh120903@gmail.com`
+`LinkedIn: https://www.linkedin.com/in/utkarsh-12zero9/`
 
 ### Made with ❤️ by Utkarsh Kumar Singh
